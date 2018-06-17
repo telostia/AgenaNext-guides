@@ -26,7 +26,7 @@ cp agena* /usr/local/bin
 
 #masternode input
 
-echo -e "${GREEN}Now paste your Masternode key by using right mouse click ${NONE}";
+echo -e "${GREEN}Now paste your Masternode key by using right mouse click and press ENTER ${NONE}";
 read MNKEY
 
 EXTIP=`wget -qO- eth0.me`
@@ -38,7 +38,7 @@ cp -r -p $HOME/.agencore/wallet.dat /root/agena-wallet.bak
 rm -rf $HOME/.agenacore
 sudo mkdir $HOME/.agenacore
 
-printf "addnode=144.202.58.228:1984\naddnode=13.58.43.14:1984\naddnode=198.187.30.178:1984\naddnode=23.95.226.17:1984\naddnode=144.202.104.5:1984\naddnode=209.250.246.24:1984\naddnode=5.135.76.217:1984\naddnode=199.247.25.189:1984\n\nrpcuser=agena51345random\nrpcpassword=$PASSW\nrpcport=1977\nrpcallowip=127.0.0.1\ndaemon=1\nlisten=1\nserver=1\nmaxconnections=256\nexternalip=$EXTIP:1984\nmasternode=1\nmasternodeprivkey=$MNKEY" >  $HOME/.agenacore/agena.conf
+printf "addnode=113.161.230.154:1984\naddnode=80.211.10.36:1984\naddnode=94.177.204.244:1984\naddnode=80.211.169.243:1984\naddnode=80.211.191.216:1984\naddnode=209.250.249.113:1984\naddnode=144.202.58.228:1984\naddnode=13.58.43.14:1984\naddnode=198.187.30.178:1984\naddnode=23.95.226.17:1984\naddnode=144.202.104.5:1984\naddnode=209.250.246.24:1984\naddnode=5.135.76.217:1984\naddnode=199.247.25.189:1984\n\nrpcuser=agena51345random\nrpcpassword=$PASSW\nrpcport=1977\nrpcallowip=127.0.0.1\ndaemon=1\nlisten=1\nserver=1\nmaxconnections=256\nexternalip=$EXTIP:1984\nmasternode=1\nmasternodeprivkey=$MNKEY" >  $HOME/.agenacore/agena.conf
 
 
 agenad -daemon
