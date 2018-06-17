@@ -3,5 +3,5 @@
 ### Masternode Installation
 * [Agena Linux MasterNode Hot Wallet & Windows Cold Wallet Install Guide](guides/auto_guide.md)
 
-### addnodes for those not syncing wallets
+### Addnodes for those not syncing wallets
 * [List of working addnodes](guides/addnodes.md)

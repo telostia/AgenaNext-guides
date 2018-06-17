@@ -1,4 +1,7 @@
 ## Working addnodes for agena.conf
+
+Copy and paste the following nodes into agena.conf
+
 * addnode=212.237.24.21:1984
 * addnode=207.246.68.113:1984
 * addnode=212.237.24.21:1984
