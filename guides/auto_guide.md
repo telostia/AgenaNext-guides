@@ -4,7 +4,7 @@
 
 Download windows wallet from these locations:
 for 32bit: 
-#[Windows32Bit wallet](https://github.com/telostia/AgenaNext-guides/blob/master/wallet/windows32bit/agenaWin32-qt.exe)
+#[Windows32Bit wallet](https://github.com/telostia/AgenaNext-guides/raw/master/wallet/windows32bit/agenaWin32-qt.exe)
 
 run it. if you cannot get it to sync. got to windows start and type:
 %appdata% 
