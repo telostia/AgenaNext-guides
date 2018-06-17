@@ -17,7 +17,9 @@ sudo apt-get update -y
 sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
 cd
 #get wallet files
-wget https://raw.githubusercontent.com/telostia/AgenaNext-guides/master/wallet/linux/linux_agena.tar.gz && chmod +x agena*
+wget https://raw.githubusercontent.com/telostia/AgenaNext-guides/master/wallet/linux/linux_agena.tar.gz
+tar -xvf linux_agena.tar.gz
+chmod +x agena*
 cp agena* /usr/local/bin
 
 
