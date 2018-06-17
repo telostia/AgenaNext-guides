@@ -34,7 +34,7 @@ PASSW=`pwgen -1 20 -n`
 
 echo -e "${GREEN}Preparing config file ${NONE}";
 echo -e "${GREEN}Make a backup of wallet.dat incase if already existed to /root/wallet.bak ${NONE}";
-cp -r -p $HOME/.agencore/wallet.dat /root/wallet.bak
+cp -r -p $HOME/.agencore/wallet.dat /root/agena-wallet.bak
 rm -rf $HOME/.agenacore
 sudo mkdir $HOME/.agenacore
 
