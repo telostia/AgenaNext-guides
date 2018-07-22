@@ -22,8 +22,11 @@ cd
 #get wallet files
 wget https://raw.githubusercontent.com/telostia/AgenaNext-guides/master/wallet/linux/agena-linux.tar.gz
 tar -xvf agena-linux.tar.gz
+rm agena-linux.tar.gz
+rm agena_auto.sh
 chmod +x agena*
 cp agena* /usr/local/bin
+rm agena*
 
 #masternode input
 
@@ -38,10 +41,9 @@ echo -e "${GREEN}Preparing config file ${NONE}";
 echo -e "${GREEN}Make a backup of wallet.dat incase if already existed to /root/wallet.bak ${NONE}";
 sudo mkdir $HOME/.agenacore
 
-printf "addnode=45.63.119.20:1984:1984\naddnode=63.209.33.237:1984\naddnode=173.212.238.28:1984\naddnode=192.210.223.201:1984\naddnode=207.148.72.43:1984\n\nrpcuser=$USER\nrpcpassword=$PASSW\nrpcport=1977\nrpcallowip=127.0.0.1\ndaemon=1\nlisten=1\nserver=1\nmaxconnections=256\nexternalip=$EXTIP:1984\nmasternode=1\nmasternodeprivkey=$MNKEY" >  $HOME/.agenacore/agena.conf
+printf "addnode=45.63.119.20:1984:1984\naddnode=63.209.33.237:1984\naddnode=173.212.238.28:1984\naddnode=192.210.223.201:1984\naddnode=207.148.72.43:1984\n\nrpcuser=$USER\nrpcpassword=$PASSW\nrpcport=1977\ndaemon=1\nlisten=1\nserver=1\nmaxconnections=256\nexternalip=$EXTIP\nbind=$EXTIP:1984\nmasternode=1\nmasternodeprivkey=$MNKEY" >  $HOME/.agenacore/agena.conf
 
-rm agena-linux.tar.gz
-rm agena*
+
 
 agenad -daemon
 watch agena-cli getinfo
