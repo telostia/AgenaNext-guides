@@ -20,8 +20,8 @@ sudo apt install libwww-perl -y
 
 cd
 #get wallet files
-wget https://raw.githubusercontent.com/telostia/AgenaNext-guides/master/wallet/linux/linux_agena.tar.gz
-tar -xvf linux_agena.tar.gz
+wget https://raw.githubusercontent.com/telostia/AgenaNext-guides/master/wallet/linux/agena-linux.tar.gz
+tar -xvf agena-linux.tar.gz
 chmod +x agena*
 cp agena* /usr/local/bin
 
@@ -31,14 +31,17 @@ echo -e "${GREEN}Now paste your Masternode key by using right mouse click and pr
 read MNKEY
 
 EXTIP=`lwp-request -o text checkip.dyndns.org | awk '{ print $NF }'`
+USER=`pwgen -1 20 -n`
 PASSW=`pwgen -1 20 -n`
 
 echo -e "${GREEN}Preparing config file ${NONE}";
 echo -e "${GREEN}Make a backup of wallet.dat incase if already existed to /root/wallet.bak ${NONE}";
 sudo mkdir $HOME/.agenacore
 
-printf "addnode=45.63.119.20:1984:1984\naddnode=63.209.33.237:1984\naddnode=173.212.238.28:1984\naddnode=192.210.223.201:1984\naddnode=207.148.72.43:1984\n\nrpcuser=agena51345random$PASSW\nrpcpassword=$PASSW\nrpcport=1977\nrpcallowip=127.0.0.1\ndaemon=1\nlisten=1\nserver=1\nmaxconnections=256\nexternalip=$EXTIP:1984\nmasternode=1\nmasternodeprivkey=$MNKEY" >  $HOME/.agenacore/agena.conf
+printf "addnode=45.63.119.20:1984:1984\naddnode=63.209.33.237:1984\naddnode=173.212.238.28:1984\naddnode=192.210.223.201:1984\naddnode=207.148.72.43:1984\n\nrpcuser=$USER\nrpcpassword=$PASSW\nrpcport=1977\nrpcallowip=127.0.0.1\ndaemon=1\nlisten=1\nserver=1\nmaxconnections=256\nexternalip=$EXTIP:1984\nmasternode=1\nmasternodeprivkey=$MNKEY" >  $HOME/.agenacore/agena.conf
 
+rm agena-linux.tar.gz
+rm agena*
 
 agenad -daemon
 watch agena-cli getinfo
